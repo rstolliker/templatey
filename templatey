@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Argument check
+if [ ! $# == 2 ]; then
+  echo "Usage: $0 template_name destination_dir"
+  exit
+fi
+
+SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+TEMPLATE="$SCRIPT/sources/$1"
+
+if [ -d "$TEMPLATE"]; then
+    cp -r "$TEMPLATE" "$2"
+else
+    echo "Template not found."
+fi
