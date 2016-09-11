@@ -1,0 +1,11 @@
+{
+  "name": "ts-react",
+  "version": "1.0.0",
+  "description": "Template for TypeScript and React projects",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
