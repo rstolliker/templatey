@@ -6,10 +6,13 @@ if [ ! $# == 2 ]; then
   exit
 fi
 
+# Path to script 
 SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Path to template folder
 TEMPLATE="$SCRIPT/sources/$1"
 
+# Check if template exists
 if [ -d "$TEMPLATE"]; then
     cp -r "$TEMPLATE" "$2"
 else
