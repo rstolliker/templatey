@@ -13,8 +13,13 @@ SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TEMPLATE="$SCRIPT/sources/$1"
 
 # Check if template exists
-if [ -d "$TEMPLATE"]; then
-    cp -r "$TEMPLATE" "$2"
+if [ -d "$TEMPLATE" ]; then
+    if [ -d "$2" ] && [ "$(ls -A $2)" ]; then
+        echo "Template not created, files exist in $2"
+    else
+        cp -r -T "$TEMPLATE" "$2"
+        echo "Template created successfully"
+    fi
 else
     echo "Template not found."
 fi
